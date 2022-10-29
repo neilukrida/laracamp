@@ -22,7 +22,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="{{route('welcome')}}">
                 <img src="{{asset('images/logo.png')}}" alt="">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -46,10 +46,10 @@
                     </li>
                 </ul>
                 <div class="d-flex">
-                    <a href="#" class="btn btn-master btn-secondary me-3">
+                    <a href="{{route('login')}}" class="btn btn-master btn-secondary me-3">
                         Sign In
                     </a>
-                    <a href="#" class="btn btn-master btn-primary">
+                    <a href="{{route('login')}}" class="btn btn-master btn-primary">
                         Sign Up
                     </a>
                 </div>
@@ -189,7 +189,8 @@
                         Finish The Project
                     </h2>
                     <p class="support">
-                        Each of you will be joining the private group and also <br> working together with team members
+                        Each of you will be joining the private group and also <br> working together with team
+                        members
                         on project
                     </p>
                     <p class="mt-5">
@@ -215,7 +216,8 @@
                         Big Demo Day
                     </h2>
                     <p class="support">
-                        Learn how to speaking in public to demonstrate your <br> final project and receive the important
+                        Learn how to speaking in public to demonstrate your <br> final project and receive the
+                        important
                         feedbacks
                     </p>
                     <p class="mt-5">
@@ -239,7 +241,8 @@
                         Start Your Journey
                     </h2>
                     <p class="support">
-                        Learn how to speaking in public to demonstrate your <br> final project and receive the important
+                        Learn how to speaking in public to demonstrate your <br> final project and receive the
+                        important
                         feedbacks
                     </p>
                     <p class="mt-5">
@@ -322,7 +325,7 @@
                                     <div class="clear"></div>
                                 </div>
                                 <p>
-                                    <a href="#" class="btn btn-master btn-primary w-100 mt-3">
+                                    <a href="{{route('checkout')}}" class="btn btn-master btn-primary w-100 mt-3">
                                         Take This Plan
                                     </a>
                                 </p>
@@ -368,7 +371,7 @@
                                     <div class="clear"></div>
                                 </div>
                                 <p>
-                                    <a href="#" class="btn btn-master btn-secondary w-100 mt-3">
+                                    <a href="{{route('checkout')}}" class="btn btn-master btn-secondary w-100 mt-3">
                                         Start With This Plan
                                     </a>
                                 </p>
@@ -404,7 +407,8 @@
                             <div class="item-review">
                                 <img src="{{asset('images/stars.svg')}}" alt="">
                                 <p class="message">
-                                    I was not really into code but after they teach me how to train my logic then I was
+                                    I was not really into code but after they teach me how to train my logic then I
+                                    was
                                     really fall in love with code
                                 </p>
                                 <div class="user">
@@ -443,7 +447,8 @@
                             <div class="item-review">
                                 <img src="{{asset('images/stars.svg')}}" alt="">
                                 <p class="message">
-                                    My background is design and art but I do really love how to make my design working
+                                    My background is design and art but I do really love how to make my design
+                                    working
                                     in the development phase
                                 </p>
                                 <div class="user">

@@ -13,19 +13,20 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password'); //not required when using Oath
-            $table->string('avatar')->nullable();
-            $table->string('occupation')->nullable();
-            $table->boolean('is_admin')->default(false);
-            $table->rememberToken(); //on login will updated
-            $table->timestamps(); //will create created at & updated_at. These field will autofilled on addition/change
-            $table->softDeletes(); //for deleted_at
-        });
+        Schema::create('users', function (Blueprint $table)
+            /*data di table ini disesuaikan dengan yang sudah dibuat di whimscal*/ {
+                $table->id();
+                $table->string('name');
+                $table->string('email')->unique();
+                $table->timestamp('email_verified_at')->nullable();
+                $table->string('password')->nullable(); /*di set nullable karena tidak butuh password*/
+                $table->string('avatar')->nullable();
+                $table->string('occupation')->nullable(); /*di set null karena admin tidak ada occupation*/
+                $table->boolean('is_admin')->default(false); /*ini untuk user biasa jadi defaultnya false*/
+                $table->rememberToken();
+                $table->timestamps(); /*timestamp akan terkonvert secara real time menjadi created_at, updated_at*/
+                $table->softDeletes();
+            });
     }
 
     /**

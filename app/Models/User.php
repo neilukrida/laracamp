@@ -7,10 +7,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Database\Eloquent\SoftDeletes;
+/*ini untuk mengatur soft delete kita*/
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens, HasFactory, Notifiable, SoftDeletes;/*ini untuk mengatur soft delete kita*/
 
     /**
      * The attributes that are mass assignable.
@@ -24,7 +26,9 @@ class User extends Authenticatable
         'avatar',
         'occupation',
         'is_admin',
+        'email_verified_at'
     ];
+    /*ini kita lengkapi sesuai dengan isi tabelnya*/
 
     /**
      * The attributes that should be hidden for serialization.

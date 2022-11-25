@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCampsTable extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
@@ -15,9 +15,9 @@ class CreateCampsTable extends Migration
     {
         Schema::create('camps', function (Blueprint $table) {
             $table->id();
-            $table->string('title',100);
+            $table->string('title', 100);
             $table->string('slug', 100);
-            $table->integer('price')->unsigned();
+            $table->integer('price')->unsigned(); /*unsigned disini adalah tidak mungkin kurang dari 0*/
             $table->timestamps();
             $table->softDeletes();
         });

@@ -1,40 +1,29 @@
 <?php
 
-namespace Database\Factories;
+namespace Database\Seeders;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Str;
+// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Seeder;
 
-/**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User>
- */
-class UserFactory extends Factory
+class DatabaseSeeder extends Seeder
 {
     /**
-     * Define the model's default state.
+     * Seed the application's database.
      *
-     * @return array<string, mixed>
+     * @return void
      */
-    public function definition()
+    public function run()
     {
-        return [
-            'name' => fake()->name(),
-            'email' => fake()->unique()->safeEmail(),
-            'email_verified_at' => now(),
-            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
-            'remember_token' => Str::random(10),
-        ];
-    }
-
-    /**
-     * Indicate that the model's email address should be unverified.
-     *
-     * @return static
-     */
-    public function unverified()
-    {
-        return $this->state(fn (array $attributes) => [
-            'email_verified_at' => null,
+        // \App\Models\User::factory(10)->create();
+        $this->call
+            ([
+            CampTableSeeder::class, /*ini untuk memanggil data di camp table seeder dan memasukkannya ke tabel*/
+            CampBenefitTableSeeder::class, /*ini untuk memanggil data di camp benefit table seeder dan memasukkannya ke tabel*/
+            AdminUserSeeder::class, /*ini untuk memanggil data di admin user seeder dan memasukkannya ke tabel*/
         ]);
+        // \App\Models\User::factory()->create([
+        //     'name' => 'Test User',
+        //     'email' => 'test@example.com',
+        // ]);
     }
 }

@@ -10,8 +10,6 @@ class Camp extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $fillable = [
-        'title',
-        'price',
-    ];
+    protected $fillable = ['title', 'price'];
+    /*jadi disini yang di protected atau bisa diisi merupakan title dan price sedangkan slug disini auto create dari title*/
 }

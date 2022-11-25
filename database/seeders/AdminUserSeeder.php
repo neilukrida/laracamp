@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Illuminate\Database\Seeder;
 use App\Models\User;
+use Illuminate\Database\Seeder;
+/*ini untuk import model kita*/
 
 class AdminUserSeeder extends Seeder
 {
@@ -18,10 +18,11 @@ class AdminUserSeeder extends Seeder
         User::create(
             [
                 'name' => 'admin',
-                'email'=>'admin@laracamp.com',
-                'email_verified_at'=>date('Y-m-d H:i:s',time()),
-                'password'=>\bcrypt('password'),
-                'is_admin'=>true
+                'email' => 'admin@laracamp.com',
+                'email_verified_at' => date('Y-m-d H:i:s', time()),
+                /*Y = year, m = month, d = tanggal,H = hour, i= minutes, s = second*/
+                'password' => \bcrypt('password'), /*ini untuk enkripsi*/
+                'is_admin' => true,
             ]
         );
     }

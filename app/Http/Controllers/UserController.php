@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 class UserController extends Controller
 {
     public function login(){
-        return view('auth.login');
+        return view('auth.user.login_admin');
     }
     public function google(){
         return Socialite::driver('google')->redirect();

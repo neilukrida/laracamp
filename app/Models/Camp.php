@@ -5,7 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-
+use Auth;
+use App\Models\Checkout;
 class Camp extends Model
 {
     use HasFactory, SoftDeletes;
@@ -14,4 +15,11 @@ class Camp extends Model
         'title',
         'price',
     ];
+
+    public function getIsRegisteredAttribute(){
+        if(!Auth::check()){
+            return false;
+        }
+        return Checkout::whereCampId($this->id)->whereUserId(Auth::id())->exists();
+    }
 }

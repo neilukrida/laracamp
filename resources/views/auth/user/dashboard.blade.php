@@ -14,6 +14,7 @@
             </div>
         </div>
         <div class="row my-5">
+            @include('components.alert')
             <table class="table">
                 <tbody>
                     @forelse ($checkouts as $checkout)
@@ -40,7 +41,7 @@
                             @endif
                         </td>
                         <td>
-                            <a href="https://wa.me/087872611668?text=Hi, saya ingin bertanya tentang kelas {{$checkout->Camp->title}}"
+                            <a href="https://wa.me/087709289728?text=Hi, saya ingin bertanya tentang kelas {{$checkout->Camp->title}}"
                                 class="btn btn-primary">
                                 Contact Support
                             </a>
@@ -58,4 +59,5 @@
         </div>
     </div>
 </section>
+
 @endsection
